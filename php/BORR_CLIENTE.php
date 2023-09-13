@@ -14,7 +14,7 @@ $Nombre = $_POST['Nombre'];
     
     // run the update query 
     If (mysqli_query($mysqli_link, $delete_query)) {
-        echo 'Producto Borrado correctamente.';
+        echo 'Cliente Borrado correctamente.';
     }
     
     // close the db connection 

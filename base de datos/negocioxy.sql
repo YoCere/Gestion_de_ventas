@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 11-09-2023 a las 03:47:52
+-- Tiempo de generación: 13-09-2023 a las 05:30:06
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -46,6 +46,14 @@ CREATE TABLE `cliente` (
   `Direccion` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`RUT`, `Nombre`, `Telefono`, `Direccion`) VALUES
+(2, 'Juan', 7454574, 'ggrgrr'),
+(3, 'Cristian', 243432, 'Juan 23');
+
 -- --------------------------------------------------------
 
 --
@@ -65,11 +73,8 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`ID`, `Nombre`, `Precio`, `Stock`, `IdCategoria`) VALUES
-(1, 'Samsung s22', 7000.35, 5, 2),
-(2, 'Juan', 32, 4, 2),
-(4, 'Juan', 22, 32, 33),
-(5, 'vfv', 33, 33, 3),
-(6, 'Manuel', 33, 344, 212);
+(6, 'Kevin', 4342, 2342, 424),
+(9, 'Samsung', 6999, 6, 9);
 
 -- --------------------------------------------------------
 
@@ -128,13 +133,13 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `RUT` int NOT NULL AUTO_INCREMENT;
+  MODIFY `RUT` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
