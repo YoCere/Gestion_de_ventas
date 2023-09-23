@@ -1,3 +1,8 @@
+<?php
+    $mysqli=mysqli_connect("localhost","root","","negocioxy");
+    $query=mysqli_query($mysqli,"SELECT ID, Nombre FROM producto");
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,10 +18,18 @@
         </p>
         <div class="form_container">
             <div class="form_group">
-                <input name="id" type="text" id="id" class="form_input" placeholder=" ">
-                <label for="name" class="form_label">ID de producto</label>
-                <span class="form_line"></span>
+                <select name="ID_actualizar" class="form_input">
+                <?php 
+                    while($datos = mysqli_fetch_array($query))
+                {
+                ?>
+                <option value="<?php echo $datos['ID']?>"> <?php echo $datos['Nombre']?> </option>
+                <?php
+                }
+                ?> 
+                </select>
             </div>
+            <br>
             <div class="form_group">
                 <input name="Nombre" type="text" id="Nombre" class="form_input" placeholder=" ">
                 <label for="name" class="form_label">Nuevo Nombre</label>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../css/estiloProv.css">
 </head>
 <body>
-<form action="../../php/CRUD_PROVEEDOR/BORR_PROVEEDOR.php" method="post" class="form">
+    <form action="../../php/CRUD_PROVEEDOR/BORR_PROVEEDOR.php" method="post" class="form">
     <h2 class="form_tittle">Borrar producto</h2>
         <p class="form_paragraph"> ¿Por que este formulario? 
             <a href="#" class="form_link"> Entra aqui</a>

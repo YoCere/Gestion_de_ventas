@@ -1,7 +1,7 @@
 <?php
 $conexion = new mysqli("localhost", "root", "", "negocioxy");
 
-$id = $_POST["id"];
+$id = $_POST["id_actualizar"];
 
 $nombre = mysqli_real_escape_string($conexion, $_POST["Nombre"]);
 $descripcion = mysqli_real_escape_string($conexion, $_POST["Descripcion"]);

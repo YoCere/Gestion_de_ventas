@@ -1,13 +1,13 @@
 <?php
 $conexion = new mysqli("localhost", "root", "", "negocioxy");
 
-$RUT = $_POST["RUT"];
+$RUT = $_POST["RUT_actualizar"];
 
 $nombre = mysqli_real_escape_string($conexion, $_POST["Nombre"]);
 $Telefono = mysqli_real_escape_string($conexion, $_POST["Telefono"]);
 $Direccion = mysqli_real_escape_string($conexion, $_POST["Direccion"]);
 if ($nombre && $Telefono && $Direccion and $RUT != "") {
-    $update_query = "UPDATE cliente SET nombre='$nombre', Telefono='$Telefono', Direccion='$Direccion' WHERE id='$id'";
+    $update_query = "UPDATE cliente SET Nombre='$nombre', Telefono='$Telefono', Direccion='$Direccion' WHERE RUT='$RUT'";
     
     if ($conexion->query($update_query)) {
         echo 'Registro actualizado exitosamente.';

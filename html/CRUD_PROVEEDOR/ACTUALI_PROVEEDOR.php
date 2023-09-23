@@ -1,3 +1,8 @@
+<?php
+    $mysqli=mysqli_connect("localhost","root","","negocioxy");
+    $query=mysqli_query($mysqli,"SELECT RUT, Nombre FROM proveedor");
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,10 +18,18 @@
         </p>
         <div class="form_container">
             <div class="form_group">
-                <input name="RUT" type="text" id="RUT" class="form_input" placeholder=" ">
-                <label for="name" class="form_label">RUT del proveedor a actualizar</label>
-                <span class="form_line"></span>
-            </div>
+            <select name="RUT_actualizar" class="form_input">
+            <?php 
+                while($datos = mysqli_fetch_array($query))
+            {
+            ?>
+            <option value="<?php echo $datos['RUT']?>"> <?php echo $datos['Nombre']?> </option>
+            <?php
+            }
+            ?> 
+            </select>
+            <br>
+            <br>
             <div class="form_group">
                 <input name="Nombre" type="text" id="Nombre" class="form_input" placeholder=" ">
                 <label for="name" class="form_label">Nuevo Nombre</label>

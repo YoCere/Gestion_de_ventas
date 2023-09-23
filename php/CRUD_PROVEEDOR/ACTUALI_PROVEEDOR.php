@@ -1,7 +1,7 @@
 <?php
 $conexion = new mysqli("localhost", "root", "", "negocioxy");
 
-$RUT = $_POST["RUT"];
+$RUT = $_POST["RUT_actualizar"];
 
 $nombre = mysqli_real_escape_string($conexion, $_POST["Nombre"]);
 $direccion = mysqli_real_escape_string($conexion, $_POST["Direccion"]);
