@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 13-09-2023 a las 05:30:06
+-- Tiempo de generación: 23-09-2023 a las 06:41:30
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -33,6 +33,16 @@ CREATE TABLE `categoria` (
   `Descripcion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`Id`, `Nombre`, `Descripcion`) VALUES
+(6, 'Samsung', 'Telefono bueno'),
+(7, 'Alcatel', 'Mas o menos'),
+(8, 'Samsung', 'Telefono '),
+(9, 'Iphone', 'Telefono IOS');
+
 -- --------------------------------------------------------
 
 --
@@ -51,8 +61,8 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`RUT`, `Nombre`, `Telefono`, `Direccion`) VALUES
-(2, 'Juan', 7454574, 'ggrgrr'),
-(3, 'Cristian', 243432, 'Juan 23');
+(5, 'Juan', 7873872, 'San Martin'),
+(6, 'Cristian', 7923382, 'Barrio nuevo');
 
 -- --------------------------------------------------------
 
@@ -73,8 +83,8 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`ID`, `Nombre`, `Precio`, `Stock`, `IdCategoria`) VALUES
-(6, 'Kevin', 4342, 2342, 424),
-(9, 'Samsung', 6999, 6, 9);
+(12, 'Samsung A03', 700, 34, 12),
+(13, 'Iphone 14', 4000, 32, 22);
 
 -- --------------------------------------------------------
 
@@ -91,6 +101,14 @@ CREATE TABLE `proveedor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`RUT`, `Nombre`, `Direccion`, `Telefono`, `Web`) VALUES
+(3, 'Carlos ', 'San Martin 4', 8788767, 'www.captlos.com'),
+(4, 'Jorge', 'Yacuiba-Centro', 9872837, 'www.jorgi.com');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -98,7 +116,10 @@ CREATE TABLE `proveedor` (
 -- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `Id` (`Id`),
+  ADD KEY `Id_2` (`Id`),
+  ADD KEY `Id_3` (`Id`);
 
 --
 -- Indices de la tabla `cliente`
@@ -127,35 +148,25 @@ ALTER TABLE `proveedor`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `Id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `RUT` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `RUT` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `RUT` int NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `categoria`
---
-ALTER TABLE `categoria`
-  ADD CONSTRAINT `categoria_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto` (`IdCategoria`) ON DELETE RESTRICT ON UPDATE CASCADE;
+  MODIFY `RUT` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,22 +1,26 @@
 <?php
-$Nombre = $_POST['Nombre'];
+$RUT = $_POST['RUT_borrar'];
 
+if (isset($RUT) && !empty($RUT)) { 
+    $mysqli = mysqli_connect("localhost", "root", "", "negocioxy");
 
-    if (isset($Nombre) && !empty($Nombre)) {
-        $mysqli_link = mysqli_connect("localhost", "root", "", "negocioxy");
-        
-        if (mysqli_connect_errno()) {
-            printf("MySQL connection failed with the error: %s", mysqli_connect_error());
-            exit;
-        }
+    if (mysqli_connect_errno()) {
+        printf("MySQL connection failed with the error: %s", mysqli_connect_error());
+        exit;
     }
-    $delete_query = "DELETE FROM cliente WHERE `Nombre` = '$Nombre'";
+
+    $delete_query = "DELETE FROM cliente WHERE `RUT` = '$RUT'";
     
-    // run the update query 
-    If (mysqli_query($mysqli_link, $delete_query)) {
+   
+    if (mysqli_query($mysqli, $delete_query)) {
         echo 'Cliente Borrado correctamente.';
+    } else {
+        echo 'Error al borrar el cliente: ' . mysqli_error($mysqli);
     }
     
-    // close the db connection 
-    mysqli_close($mysqli_link);
+    
+    mysqli_close($mysqli);
+} else {
+    echo 'RUT no proporcionado.';
+}
 ?>

@@ -1,5 +1,5 @@
 <?php
-$ID = $_POST['ID'];
+$ID = $_POST['Id_borrar'];
 
 $mysqli_link = mysqli_connect("localhost", "root", "", "negocioxy");
 

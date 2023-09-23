@@ -1,5 +1,5 @@
 <?php
-$RUT = $_POST['RUT'];
+$RUT = $_POST['RUT_borrar'];
 
 $mysqli_link = mysqli_connect("localhost", "root", "", "negocioxy");
 
