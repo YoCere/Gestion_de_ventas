@@ -26,7 +26,7 @@
         <?php
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             echo "<tr>";
-            echo "<td>" . $row['Id'] . "</td>";
+            echo "<td>" . $row['ID'] . "</td>";
             echo "<td>" . $row['Nombre'] . "</td>";
             echo "<td>" . $row['Descripcion'] ."</td>";
             echo "</tr>";

@@ -1,3 +1,8 @@
+<?php
+    $mysqli=mysqli_connect("localhost","root","","negocioxy");
+    $query=mysqli_query($mysqli,"SELECT ID, Nombre FROM categoria ");
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,9 +33,16 @@
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
-                <input name="IdCategoria" type="number" id="IdCategoria" class="form_input" placeholder=" ">
-                <label for="IdCategoria" class="form_label">Id-Categoria</label>
-                <span class="form_line"></span>
+            <select name="ID_Categoria" class="form_input">
+            <?php 
+                while($datos = mysqli_fetch_array($query))
+            {
+            ?>
+            <option value="<?php echo $datos['ID']?>"> <?php echo $datos['ID']." ".$datos['Nombre']?> </option>
+            <?php
+            }
+            ?> 
+            </select>
             </div>
             <br>
             <br>
