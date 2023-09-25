@@ -33,7 +33,7 @@
                 <span class="form_line"></span>
             </div>
             <div class="form_group">
-            <select name="ID_Categoria" class="form_input">
+            <select name="IdCategoria" class="form_input">
             <?php 
                 while($datos = mysqli_fetch_array($query))
             {

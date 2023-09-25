@@ -6,6 +6,24 @@
     box-sizing: border-box;
 }
 
+.form_container {
+    margin-top: 3em;
+    display: grid;
+    size: 2.5em;
+    max-height: 400px; /* Establece la altura máxima deseada */
+    overflow-y: auto; /* Habilita el desplazamiento vertical cuando sea necesario */
+}
+
+/* Ajusta el tamaño de la tabla y habilita el desplazamiento horizontal si es necesario */
+#formularioCompra table {
+    max-width: 100%; /* Ajusta el ancho máximo de la tabla al 100% del contenedor */
+}
+
+/* Habilita el desplazamiento horizontal dentro del div contenedor */
+#formularioCompra {
+    overflow-x: auto; /* Habilita el desplazamiento horizontal si es necesario */
+}
+
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #8686ff;
