@@ -1,7 +1,7 @@
 <?php
-    $mysqli=mysqli_connect("localhost","root","","negocioxy");
-    $query=mysqli_query($mysqli,"SELECT Nombre FROM cliente");
-    $query1=mysqli_query($mysqli,"SELECT Nombre, Precio FROM producto");
+    include "../../php/conexion.php";
+    $query=mysqli_query($mysqli_link,"SELECT Nombre FROM cliente");
+    $query1=mysqli_query($mysqli_link,"SELECT Nombre, Precio FROM producto");
 
 ?>
 <!DOCTYPE html>

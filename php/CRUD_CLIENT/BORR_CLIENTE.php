@@ -2,12 +2,7 @@
 $RUT = $_POST['RUT_borrar'];
 
 if (isset($RUT) && !empty($RUT)) { 
-    $mysqli = mysqli_connect("localhost", "root", "", "negocioxy");
-
-    if (mysqli_connect_errno()) {
-        printf("MySQL connection failed with the error: %s", mysqli_connect_error());
-        exit;
-    }
+    include "../conexion.php";
 
     $delete_query = "DELETE FROM cliente WHERE `RUT` = '$RUT'";
     

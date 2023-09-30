@@ -1,6 +1,6 @@
 <?php
-    $mysqli=mysqli_connect("localhost","root","","negocioxy");
-    $query=mysqli_query($mysqli,"SELECT Id, Nombre FROM categoria");
+     include "../../php/conexion.php";
+    $query=mysqli_query($mysqli_link,"SELECT Id, Nombre FROM categoria");
 ?>
 
 <html lang="en">

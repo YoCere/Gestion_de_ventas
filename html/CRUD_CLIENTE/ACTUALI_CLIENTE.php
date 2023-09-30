@@ -1,6 +1,6 @@
 <?php
-    $mysqli=mysqli_connect("localhost","root","","negocioxy");
-    $query=mysqli_query($mysqli,"SELECT RUT, Nombre FROM cliente");
+    include "../../php/conexion.php";
+    $query=mysqli_query($mysqli_link,"SELECT RUT, Nombre FROM cliente");
 ?>
 
 <html lang="en">

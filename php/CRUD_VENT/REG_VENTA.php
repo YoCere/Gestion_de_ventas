@@ -5,12 +5,7 @@ function insertarVenta(){
     $MF = $_POST['Monto_Final'];
     $Descuento = $_POST['Descuento'];
 
-    $mysqli_link = mysqli_connect("localhost", "root", "", "negocioxy");
-    if (mysqli_connect_errno())
-        {
-            printf("MySQL connection failed with the error: %s", mysqli_connect_error());
-            exit;
-        }
+    include "../conexion.php";
     //INSERT INTO `usuarios` (`Idusr`, `Nombre`, `Clave`, `Fecha`) VALUES (NULL, 'ronald', '123456', '2023-08-01');
     $insert_query = "INSERT INTO `venta`(`Fecha`,`Monto_Final`,`Descuento`, `Nombre`) 
     VALUES ('". mysqli_real_escape_string($mysqli_link, $Fecha)."','".mysqli_real_escape_string($mysqli_link, $MF)."','".mysqli_real_escape_string($mysqli_link, $Descuento)."','".mysqli_real_escape_string($mysqli_link, $Nombre) ."')";

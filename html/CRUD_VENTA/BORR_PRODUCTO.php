@@ -1,6 +1,6 @@
 <?php
-    $mysqli=mysqli_connect("localhost","root","","negocioxy");
-    $query=mysqli_query($mysqli,"SELECT ID, Nombre FROM producto");
+    include "../../php/conexion.php";
+    $query=mysqli_query($mysqli_link,"SELECT ID, Nombre FROM producto");
 ?>
 
 

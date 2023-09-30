@@ -9,11 +9,7 @@
 <body>
     <h1>Productos</h1>
     <?php
-    $mysqli_link = mysqli_connect("localhost", "root", "", "negocioxy");
-    if (mysqli_connect_errno()) {
-        printf("MySQL connection failed with the error: %s", mysqli_connect_error());
-        exit;
-    }
+     include "../conexion.php";
     $select_query = "SELECT * FROM producto LIMIT 10";
     $result = mysqli_query($mysqli_link, $select_query);
     ?>

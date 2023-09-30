@@ -1,5 +1,5 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "negocioxy");
+ include "../conexion.php";
 
 $id = $_POST["ID_actualizar"];
 

@@ -1,12 +1,7 @@
 <?php
 $ID = $_POST['Id_borrar'];
 
-$mysqli_link = mysqli_connect("localhost", "root", "", "negocioxy");
-
-if (mysqli_connect_errno()) {
-    printf("MySQL connection failed with the error: %s", mysqli_connect_error());
-    exit;
-}
+include "../conexion.php";
 
 $delete_query = "DELETE FROM categoria WHERE `ID` = '$ID'";
 
