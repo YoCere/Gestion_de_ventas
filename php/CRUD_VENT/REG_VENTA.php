@@ -1,6 +1,6 @@
 <?php
 function insertarVenta(){
-    $Nombre = $_POST['Nombre'];
+    $Nombre = $_POST['NombreCliente'];
     $Fecha = $_POST['Fecha'];
     $MF = $_POST['Monto_Final'];
     $Descuento = $_POST['Descuento'];

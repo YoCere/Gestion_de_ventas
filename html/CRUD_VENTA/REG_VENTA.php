@@ -46,8 +46,8 @@
             </div>
             <br>
             <div class="form_group initial">
-                <p id="sumaSubtotales">MONTO FINAL: <span id="montoFinal">0.00</span></p>
-                <input type="text" id="descuento" placeholder="Descuento (%)">
+                <input type="hidden" name="Monto_Final" id="montoFinalHidden" value="0.00">
+                <input name="Descuento" type="text" id="descuento" placeholder="Descuento (%)">
                 <button type="button" onclick="aplicarDescuento()">Aplicar Descuento</button>
             </div>
             <br>
@@ -153,8 +153,8 @@
     // Calcular el monto final con el descuento
     var montoFinalConDescuento = sumaTotal * ((100 - descuento) / 100);
 
-    // Actualizar el contenido del elemento 'sumaSubtotales' con el monto final con descuento
-    document.getElementById("sumaSubtotales").innerHTML = "MONTO FINAL: " + montoFinalConDescuento.toFixed(2);
+    // Actualizar el contenido del elemento 'montoFinalHidden'
+    document.getElementById("montoFinalHidden").value = montoFinalConDescuento.toFixed(2);
 }
 
     function calcularSubtotal(inputCantidad) {
