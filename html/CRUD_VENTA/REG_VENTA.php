@@ -152,7 +152,8 @@
 
     // Calcular el monto final con el descuento
     var montoFinalConDescuento = sumaTotal * ((100 - descuento) / 100);
-
+    var descuentoOficial = sumaTotal - montoFinalConDescuento;
+    
     // Actualizar el contenido del elemento 'montoFinalHidden'
     document.getElementById("montoFinalHidden").value = montoFinalConDescuento.toFixed(2);
 }
